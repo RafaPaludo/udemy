@@ -24,5 +24,5 @@ conn.connect((err) => {
   if (err) throw err;
 
   console.log('Conectou ao MySQL!')
-  app.listen(3000)
+  app.listen(5000)
 })
