@@ -1,0 +1,126 @@
+// Importação das bibliotecas
+const express = require("express")
+const exphbs = require("express-handlebars")
+const pool = require('./db/conn')
+
+// Configuração do express e handlebars
+const app = express()
+
+app.use(
+  express.urlencoded({ extended: true })
+)
+
+app.use(express.json())
+
+app.engine('handlebars', exphbs.engine())
+app.set('view engine', 'handlebars')
+
+// Uso da pasta public com CSS e assets
+app.use(express.static('public'))
+
+
+/**
+ * ROTAS
+ */
+app.get('/', (req, res) => {
+  res.render('home')
+})
+
+app.post('/books/insertbooks', (req, res) => {
+  const title = req.body.title
+  const pageqty = req.body.pageqty
+
+  const sql = `INSERT INTO books (??, ??) VALUES (?, ?)`
+  const data = ['title', 'pageqty', title, pageqty]
+
+  pool.query(sql, data, (err) => {
+    if (err) {
+      console.warn(err)
+      return
+    }
+
+    res.redirect('/')
+  })
+})
+
+app.get('/books', (req, res) => {
+  const sql = `SELECT * FROM books`
+
+  pool.query(sql, (err, data) => {
+    if (err) {
+      console.warn(err)
+      return;
+    }
+
+    const books = data
+
+    res.render('books', { books })
+  })
+})
+
+app.get('/book/:id', (req, res) => {
+  const id = req.params.id
+  const sql = `SELECT * FROM books WHERE ?? = ?`
+  const data = ['id', id]
+
+  pool.query(sql, data, (err, data) => {
+    if (err) {
+      console.warn(err)
+      return;
+    }
+
+    const book = data[0]
+    res.render('book', { book })
+  })
+})
+
+app.get('/books/edit/:id', (req, res) => {
+  const id = req.params.id
+  const sql = `SELECT * FROM books WHERE ?? = ?`
+  const data = ['id', id]
+
+  pool.query(sql, data, (err, data) => {
+    if (err) {
+      console.warn(err)
+      return;
+    }
+
+    const book = data[0]
+    res.render('editbook', { book })
+  })
+})
+
+app.post('/books/updatebook', (req, res) => {
+  const id = req.body.id
+  const title = req.body.title
+  const pageqty = req.body.pageqty
+
+  const sql = `UPDATE books SET ?? = ?, ?? = ? WHERE ?? = ?`
+  const data = ['pageqty', pageqty, 'title', title, 'id', id]
+
+  pool.query(sql, data, (err, data) => {
+    if (err) {
+      console.warn(err)
+      return;
+    }
+
+    res.redirect('/books')
+  })
+})
+
+app.post('/books/remove/:id', (req, res) => {
+  const id = req.params.id
+  const sql = `DELETE FROM books WHERE ?? = ?`
+  const data = ['id', id]
+
+  pool.query(sql, data, (err, data) => {
+    if (err) {
+      console.warn(err)
+      return;
+    }
+
+    res.redirect('/books')
+  })
+})
+
+app.listen(5000)
