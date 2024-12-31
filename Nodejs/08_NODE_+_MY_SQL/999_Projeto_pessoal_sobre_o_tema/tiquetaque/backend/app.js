@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const pool = require('./db/conn');
+const cors = require('cors');
+
 require('dotenv').config();
 
 // Configurações básicas
@@ -12,6 +14,7 @@ const port = 5000;
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 const authenticateToken = (req, res, next) => {
@@ -46,21 +49,21 @@ app.post('/register', async (req, res) => {
   }
 
   try {
-   // Hash da senha
-   const hashedPassword = await bcrypt.hash(password, 10);
-   
-   // Inserir no banco de dados
-   const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
-   const data = [name, email, hashedPassword];
-   pool.query(sql, data, (err, result) => {
-    if (err) {
-      if (err.code === 'ER_DUP_ENTRY') {
-        return res.status(400).json({ message: 'Email já cadastrado'});
+    // Hash da senha
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
+    // Inserir no banco de dados
+    const sql = 'INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
+    const data = [name, email, hashedPassword];
+    pool.query(sql, data, (err, result) => {
+      if (err) {
+        if (err.code === 'ER_DUP_ENTRY') {
+          return res.status(400).json({ message: 'Email já cadastrado'});
+        }
+        return res.status(500).json({ message: 'Erro ao registrar o usuário' });
       }
-      return res.status(500).json({ message: 'Erro ao registrar o usuário' });
-    }
-    res.status(201).json({ message: 'Usuário registrado com sucesso' });
-   });
+      res.status(201).json({ message: 'Usuário registrado com sucesso' });
+    });
   } catch (error) {
     res.status(500).json({ message: 'Erro no servidor' });
   }
