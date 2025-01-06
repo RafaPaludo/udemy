@@ -1,24 +1,26 @@
 <template>
-  <VaForm
-    ref="myForm"
-    class="flex flex-col gap-2"
-    tag="form"
-    @submit.prevent="handleRegister"
-  >
-    <VaInput stateful label="Nome" :rules="[(v) => !!v || 'Necessário']" v-model="name" />
-
-    <VaInput stateful label="E-mail" :rules="[(v) => !!v || 'Necessário']" v-model="email" />
-
-    <VaInput stateful label="Senha" :rules="[(v) => !!v || 'Necessário']" v-model="password" />
-
-    <div>
-      <VaButton preset="plain" :to="'/login'">Login</VaButton>
-    </div>
-
-    <VaButton :loading="isLoading" :disabled="isLoading || !isValid" type="submit">
-      Registrar
-    </VaButton>
-  </VaForm>
+  <component :is="layout">
+    <VaForm
+      ref="myForm"
+      class="flex flex-col gap-2"
+      tag="form"
+      @submit.prevent="handleRegister"
+    >
+      <VaInput stateful label="Nome" :rules="[(v) => !!v || 'Obrigatório']" v-model="name" />
+  
+      <VaInput stateful label="E-mail" :rules="[(v) => !!v || 'Obrigatório']" v-model="email" />
+  
+      <VaInput stateful label="Senha" :rules="[(v) => !!v || 'Obrigatório']" v-model="password" />
+  
+      <div>
+        <VaButton preset="plain" :to="'/login'">Login</VaButton>
+      </div>
+  
+      <VaButton :loading="isLoading" :disabled="isLoading || !isValid" type="submit">
+        Registrar
+      </VaButton>
+    </VaForm>
+  </component>
 </template>
 
 <script setup>
@@ -31,6 +33,7 @@ const { isLoading, isValid } = useForm('myForm')
 const { init } = useToast()
 const router = useRouter()
 
+const layout = 'login-layout'
 const name = ref('');
 const email = ref('');
 const password = ref('');
