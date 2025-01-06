@@ -1,5 +1,6 @@
 <template>
   <component :is="layout">
+    Hello World!!
   </component>
 </template>
 
