@@ -1,8 +1,5 @@
-# Nessa etapa são feitos ajustes nos comandos SQL para garantir que não haja SQL Injection.
+# Nessa etapa é criada a conexão com o banco de dados utilizando o sequelize e o mysql2.
 
-# É utilizado uma nova estrutura para enviar as queries.
+# O Sequelize permite usar diversos tipos de bancos de dados, iremos usar o mysql. Para funcionar, é necessário instalar o pacote mysql2.
 
-# ?? -> para o nome da coluna
-# ? -> para o valor registros
-# É criado um array (data), que segue a ordem dos dados na query
-# O array (data) é enviado na query do SQL
+# Nessa etapa, basta importar o Sequelize no arquivo de conexão [conn.js](./db/conn.js), fazer a conexão com o banco (nome, login, senha) e executar um comando para testar a conexão.
