@@ -1,4 +1,4 @@
-# Nessa etapa é criado o primeiro Model [User](./models/User.js) do banco, é basicamente criar uma tabela utilizando o js.
+# Nessa etapa é criado o primeiro Model [User](./models/User.js) do banco, modelos que representam as tabelas do seu banco de dados.
 
 # Além disso é necessário importar esse model na [aplicação](index.js), iniciar a conexão com o banco e fazendo o sync.
 
