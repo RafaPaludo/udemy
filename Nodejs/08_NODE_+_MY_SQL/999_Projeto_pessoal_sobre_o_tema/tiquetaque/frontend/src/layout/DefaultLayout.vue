@@ -54,13 +54,10 @@
 
         <VaSpacer />
 
-        <VaSidebarItem
-          :active="'Settings' === activeElement"
-          @click="activeElement = 'Settings'"
-        >
+        <VaSidebarItem>
           <VaSidebarItemContent>
-            <VaIcon name="settings" />
-            <VaSidebarItemTitle>Settings</VaSidebarItemTitle>
+            <VaIcon name="exit" />
+            <VaSidebarItemTitle>Sair</VaSidebarItemTitle>
           </VaSidebarItemContent>
         </VaSidebarItem>
       </VaSidebar>

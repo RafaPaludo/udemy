@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+.router-link-active.router-link-exact-active {
+  background-color: rgb(21, 78, 193);
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useUserStore } from '@/stores/user'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,7 +31,9 @@ const router = createRouter({
 
 // Guard para verificar autenticação
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth) {
+  const userStore = useUserStore();
+
+  if (to.meta.requiresAuth && !userStore.isAuthenticated) {
     const token = localStorage.getItem('authToken'); // Pegue o token do Local Storage
     if (!token) {
       return next('/login'); // Redireciona para a página de login

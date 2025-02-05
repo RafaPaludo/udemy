@@ -93,7 +93,7 @@ app.post('/login', (req, res) => {
       }
 
       // Gerar token JWT
-      const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+      const token = jwt.sign({ id: user.id, email: user.email, name: user.name }, SECRET_KEY, { expiresIn: '1h' });
       res.status(201).json({ message: 'Login realizado com sucesso', token });
     })
   } catch (error) {
