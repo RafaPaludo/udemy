@@ -1,0 +1,1 @@
+# Nessa etapa são buscados todos os itens criados no banco de dados. Utilizando o fetchAll({ raw: true })
