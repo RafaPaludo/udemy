@@ -7,12 +7,4 @@ const sequelize = new Sequelize('nodesequelize', 'root', 'password', {
   dialect: 'mysql'
 })
 
-// Aqui só testa a conexão, como se fizesse um PING no banco para ver se conecta com sucesso!
-try {
-  sequelize.authenticate();
-  console.log('Conexão estabelecida com sucesso com o Sequelize!');
-} catch (error) {
-  console.log('Não foi possível conectar', error);
-}
-
 module.exports = sequelize;
