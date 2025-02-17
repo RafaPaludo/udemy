@@ -1,0 +1,14 @@
+<h1>Todas as tasks</h1>
+
+<div class="container container-tasks">
+  {{#each tasks}}
+    <div class="task">
+      <a class="task-title" href="/">{{ this.title }}</a>
+      <div class="task-actions">
+        <a href="/"><i class="bi bi-check2"></i></a>
+        <a href="/"><i class="bi bi-pencil-square"></i></a>
+        <a href="/"><i class="bi bi-x-lg"></i></a>
+      </div>
+    </div>
+  {{/each}} 
+</div>

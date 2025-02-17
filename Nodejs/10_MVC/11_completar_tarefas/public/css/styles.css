@@ -1,0 +1,154 @@
+:root {
+  /* Texto */
+  --color-text: #424e5e;
+
+  /* Border */
+  --border-dashed: #ccc;
+
+  /* Button */
+  --button-bg-primary: rgb(0, 193, 106);
+}
+
+body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+}
+
+#navbar {
+  padding: 1rem;
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin-top: 1rem;
+}
+
+#navbar ul a {
+  font-size: 1rem;
+  color: var(--color-text);
+  display: block;
+  text-align: center;
+  border-radius: .25rem;
+}
+
+#navbar ul a:hover {
+  background-color: #f1f1f1;
+}
+
+/* MAIN */
+main {
+  padding: 1rem 0 0 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Container */
+.container {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+/* FORM */
+form {
+  max-width: 60vw;
+  margin: 0 auto
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-control label {
+  font-weight: bold;
+}
+
+input, textarea {
+  border-radius: .25rem;
+  padding: .25rem .5rem;
+}
+
+/* Button */
+.btn {
+  background-color: var(--button-bg-primary);
+  border: none;
+  color: white;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+/* Tasks */
+.container-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.task {
+  border: 1px dashed var(--border-dashed);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-title {
+  font-size: 1.6rem;
+  color: var(--color-text);
+}
+
+.task-title:hover {
+  opacity: .7;
+}
+
+.task-title.done {
+  text-decoration: line-through;
+}
+
+.task-actions {
+  font-size: 1.25rem;
+  display: flex;
+  gap: .8rem;
+}
+
+.task-actions button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.task-actions .bi{
+  color: var(--color-text);
+}
+
+.task-actions .bi-check2:hover{
+  color: var(--button-bg-primary);
+}
+
+.task-actions .bi-pencil-square:hover {
+  color: #0d6efd
+}
+
+.task-actions .bi-x-lg:hover {
+  color: #dc3545;
+}

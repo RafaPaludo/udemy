@@ -1,0 +1,32 @@
+<h1>Todas as tasks</h1>
+
+<div class="container container-tasks">
+  {{#each tasks}}
+    <div class="task">
+
+      {{#if this.done}}
+        <a class="task-title done" href="/">{{ this.title }}</a>
+      {{else}}
+        <a class="task-title" href="/">{{ this.title }}</a>
+      {{/if}}
+
+      <div class="task-actions">
+        <form action="/tasks/updatestatus" method="post">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">
+            <i class="bi bi-check2"></i>
+          </button>
+        </form>
+
+        <a href="/tasks/edit/{{ this.id }}"><i class="bi bi-pencil-square"></i></a>
+
+        <form action="/tasks/remove" method="post">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  {{/each}} 
+</div>
