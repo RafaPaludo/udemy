@@ -16,3 +16,7 @@
 
 ---
 
+## 3 Etapa:
+
+- Criação do models e seus relacionamentos;
+- Criação das tabelas no banco ao importar no index.js e rodar o sync;
