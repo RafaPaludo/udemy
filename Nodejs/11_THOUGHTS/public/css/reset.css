@@ -6,6 +6,7 @@
 /* 2. Remove default margin */
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -39,13 +40,13 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+li {
+  list-style: none;
+}
+
 /*
   9. Create a root stacking context
 */
 #root, #__next {
   isolation: isolate;
 }
-
-/*
-  CSS do projeto começa aqui
-*/

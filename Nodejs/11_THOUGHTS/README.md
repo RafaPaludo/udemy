@@ -31,3 +31,5 @@
 ---
 
 ## 5 Etapa:
+
+- Criado css inicial da página home;
