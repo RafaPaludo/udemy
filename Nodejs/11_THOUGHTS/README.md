@@ -47,3 +47,12 @@
 
 - Criação do formulário de registrar usuário;
 - Adicionar o CSS para o formulário de registro;
+
+---
+
+## 8 Etapa:
+
+- Criação de endpoint para registrar usuário;
+- Feitas validações dos dados do novo cadastro de usuário;
+- Criação flash message para mostrar mensagens explicativas para o usuário;
+- Criação da sessão e mantido usuário logado após o seu cadastro;
