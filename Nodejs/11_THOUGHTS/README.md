@@ -40,3 +40,10 @@
 
 - Criação da view e controller de autenticação;
 - Criação das rotas de autenticação que serão direto na raíz /;
+
+---
+
+## 7 Etapa:
+
+- Criação do formulário de registrar usuário;
+- Adicionar o CSS para o formulário de registro;
