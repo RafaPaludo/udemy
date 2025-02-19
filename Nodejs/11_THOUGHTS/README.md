@@ -20,3 +20,14 @@
 
 - Criação do models e seus relacionamentos;
 - Criação das tabelas no banco ao importar no index.js e rodar o sync;
+
+---
+
+## 4 Etapa:
+
+- Criação da view main, adição de fonts, icones, estilos, etc;
+- Criação do Controller de Thoughts e da rota principal;
+
+---
+
+## 5 Etapa:
