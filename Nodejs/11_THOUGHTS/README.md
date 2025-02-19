@@ -76,3 +76,11 @@
 ## 11 Etapa:
 
 - Criada um middleware para validar se o usuário está logado e permitir que ele acesse rotas protegidas;
+
+---
+
+## 12 Etapa:
+
+- Criação de formulário para criar um novo pensamento;
+- Adicionado view do formulário;
+- Adicionada rota POST para a criação;
