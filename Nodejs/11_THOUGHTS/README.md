@@ -70,3 +70,9 @@
 - Criada nova rota POST para fazer o login do sistema;
 - Verificado se o email e senha existem;
 - Caso email e senha estejam corretos, faz o login e cria a sessão para o usuário;
+
+---
+
+## 11 Etapa:
+
+- Criada um middleware para validar se o usuário está logado e permitir que ele acesse rotas protegidas;

@@ -3,6 +3,10 @@ const router = express.Router()
 
 const ThoughtController = require('../controllers/ThoughtController');
 
-router.get('/', ThoughtController.showThoughts)
+// Heplper
+const checkAuth = require('../helpers/auth').checkAuth;
+
+router.get('/dashboard', checkAuth, ThoughtController.dashboard)
+router.get('/', ThoughtController.showThoughts);
 
 module.exports = router;
