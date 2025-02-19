@@ -56,3 +56,9 @@
 - Feitas validações dos dados do novo cadastro de usuário;
 - Criação flash message para mostrar mensagens explicativas para o usuário;
 - Criação da sessão e mantido usuário logado após o seu cadastro;
+
+---
+
+## 9 Etapa:
+
+- Criada nova rota GET para fazer o logout do sistema;

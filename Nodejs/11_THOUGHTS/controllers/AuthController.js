@@ -57,4 +57,9 @@ module.exports = class AuthController {
       console.log('Erro ao cadastrar o novo usuário',error)
     }
   }
+
+  static logout(req, res) {
+    req.session.destroy();
+    res.redirect('/login');
+  }
 }
