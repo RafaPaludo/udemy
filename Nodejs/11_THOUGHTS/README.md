@@ -62,3 +62,11 @@
 ## 9 Etapa:
 
 - Criada nova rota GET para fazer o logout do sistema;
+
+---
+
+## 10 Etapa:
+
+- Criada nova rota POST para fazer o login do sistema;
+- Verificado se o email e senha existem;
+- Caso email e senha estejam corretos, faz o login e cria a sessão para o usuário;
