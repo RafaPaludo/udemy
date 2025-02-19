@@ -33,3 +33,10 @@
 ## 5 Etapa:
 
 - Criado css inicial da página home;
+
+---
+
+## 6 Etapa:
+
+- Criação da view e controller de autenticação;
+- Criação das rotas de autenticação que serão direto na raíz /;
