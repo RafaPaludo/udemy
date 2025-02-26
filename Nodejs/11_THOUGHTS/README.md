@@ -91,3 +91,10 @@
 
 - Melhorando o CSS da página de dashboard;
 - Adicionada nova rota para remover pensamentos;
+
+---
+
+## 14 Etapa
+
+- Adicionada função de UPDATE dos pensamentos;
+- Criada nova view de atualização;
