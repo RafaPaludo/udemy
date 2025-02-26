@@ -84,3 +84,10 @@
 - Criação de formulário para criar um novo pensamento;
 - Adicionado view do formulário;
 - Adicionada rota POST para a criação;
+
+---
+
+## 13 Etapa:
+
+- Melhorando o CSS da página de dashboard;
+- Adicionada nova rota para remover pensamentos;
