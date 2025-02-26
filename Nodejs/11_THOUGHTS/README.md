@@ -98,3 +98,10 @@
 
 - Adicionada função de UPDATE dos pensamentos;
 - Criada nova view de atualização;
+
+---
+
+## 15 Etapa
+
+- Criada funcionalidade de busca entre os pensamentos da Home
+- Criado filtro de ordenação;
